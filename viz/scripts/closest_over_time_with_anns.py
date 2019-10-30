@@ -22,11 +22,12 @@ if __name__ == "__main__":
         helpers.clear_figure()
         time_sims, lookups, nearests, sims = helpers.get_time_sims(embeddings, word1)
 
+        print(nearests)
         words = lookups.keys()
         values = [ lookups[word] for word in words ]
         fitted = helpers.fit_tsne(values)
         if not len(fitted):
-            print "Couldn't model word", word1
+            print("Couldn't model word", word1)
             continue
 
         # draw the words onto the graph
@@ -37,6 +38,6 @@ if __name__ == "__main__":
             helpers.plot_annotations(annotations)
 
         helpers.savefig("%s_annotated" % word1)
-        for year, sim in time_sims.iteritems():
-            print year, sim
+        for year, sim in time_sims.items():
+            print(year, sim)
 

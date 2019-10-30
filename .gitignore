@@ -7,6 +7,8 @@ statsmodels
 .git_old
 scikit-learn
 .gitignore
+viz/output/
+embeddings/
 
 *.c
 
